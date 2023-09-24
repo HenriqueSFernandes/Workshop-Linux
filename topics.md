@@ -1,8 +1,8 @@
-# Tópicos
+# Índice
 
-1. [Introdução ao linux (o que é, porque foi criado...)](#introdução-ao-linux)
-2. [Comandos básicos de navegação (ls, cd, relative vs absolute path)](#comandos-básicos)
-3. [Criação e gestão de arquivos (mkdir, touch, rm, mv, cp, etc)](#criação-e-gestão-de-arquivos)
+1. [Introdução ao linux](#introdução-ao-linux)
+2. [Comandos básicos de navegação](#comandos-básicos-de-navegação)
+3. [Criação e gestão de arquivos](#criação-e-gestão-de-arquivos)
 4. [Manipulação de arquivos (nano, vim/nvim, emacs)](#manipulação-de-arquivos)
 5. Permissões (file permissions, ownership)
 6. Filtros e regex (grep, cat, sort, cut, piping/redirection)
@@ -20,7 +20,7 @@ O linux é um kernel de sistema operativo *open source* que serve como base para
 Entre as características chave do Linux está o facto de ser *open source*, sendo distribuído sob a licensa *GNU General Public License (GPL)*, o que significa que os usuários são livres de utilizar, modificar e distribuir o software para qualquer finalidade, desde que estas modificações também sejam distribuidas com a mesma licensa. Assim, o linux atraiu uma grande comunidade de desenvolvedores e entusiastas da computação, o que levou à rapida evolução deste sistema.
 
 ---
-# Comandos básicos
+# Comandos básicos de navegação
 
 Certamente que uma das primeiras coisas que vos passa pela cabeça ao pensar em usar um terminal é "porquê perder tempo a aprender comandos se podemos fazer tudo através de uma interface gráfica?". E é verdade, quase tudo o que dá para fazer pelos comandos dá para fazer por uma interface gráfica, e o intuito de aprender a utilizar o terminal é complementar a interface gráfica e não substituí-la. Pensem no terminal como mais uma ferramenta para a vossa caixa de ferramentas. Quanto mais completa a caixa de ferramentas, melhor.
 
