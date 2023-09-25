@@ -4,7 +4,7 @@
 2. [Comandos básicos de navegação](#comandos-básicos-de-navegação)
 3. [Criação e gestão de arquivos](#criação-e-gestão-de-arquivos)
 4. [Manipulação de arquivos (nano, vim/nvim, emacs)](#manipulação-de-arquivos)
-5. Permissões (file permissions, ownership)
+5. [Permissões](#permissões) (file permissions, ownership)
 6. Filtros e regex (grep, cat, sort, cut, piping/redirection)
 7. Gerenciamento de processos
 8. Remote shell (SSH)
@@ -85,6 +85,34 @@ Uma das partes mais importantes de utilizar um terminal é a criação e gestão
 | mv | mover / mudar o nome | mv [source] [destination] |
 | cp | copiar | cp [source] [destination] |
 ---
+
 # Manipulação de arquivos
 
+Editores de texto são ferramentas essenciais para criar, editar e manipular ficheiros. Editores de texto de terminal, como o nome sugere, são feitos para serem utilizados através de uma interface de linha de comandos *(CLI)*. Entre os editores mais conhecidos estão o *nano* e o *vim*. A principal diferença entre os 2 é que enquanto que o *nano* é mais focado em editar texto simples, o *vim* é mais apropriado para escrever código. Devido a esta diferença, é muito mais fácil aprender a utilizar o *nano*.
+
+## Nano
+
+Para abrir o *nano* é muito simples, pois vem pré-instalado na maioria dos sistemas Unix (Linux e MacOS). Assim, basta escrever `nano [arquivo]` para abrir.
+
+Após terem o *nano* aberto há alguns conceitos muito importantes que facilitam o seu uso.
+
+- Para navegar pelo texto utiliza-se as setas do teclado
+- Para saltar várias linhas de uma vez pode-se utilizar as teclas `Page Up` e `Page Down` ou `Ctrl + ↑` e `Ctrl + ↓`
+- Para ir para o início ou fim da linha basta clicar em `Home` e `End`
+- Para ir para o início ou fim do arquivo utiliza-se `Ctrl + Home` e `Ctrl + End`
+- Para copiar texto utiliza-se `Alt + 6`, para cortar `Ctrl + K` e para colar `Ctrl + U`
+- Para guardar utiliza-se `Ctrl + O` e sair `Ctrl + X`
+
+Existem muitos outros comandos que podem ser consultados através do manual (`man nano`)
+
+## Vim
+
 `WIP`
+
+# Permissões
+
+No ecossistema Linux, a gestão de permissões desempenha um papel fundamental na segurança e no controle de acesso aos arquivos e diretórios. As permissões determinam quem pode ler, escrever e executar cada ficheiro, garantindo assim a integridade do sistema e dos dados.
+
+Ao contrário de sistemas mais orientados para o usuário, o Linux utiliza um sistema de permissões baseado em três entidades principais: proprietário, grupo e outros. Cada arquivo e diretório possui permissões específicas atribuídas a cada uma dessas entidades, que podem ser alteradas para alcançar o nível desejado de segurança e privacidade.
+
+Neste contexto, as permissões são uma parte essencial da administração de sistemas baseados em Linux e da garantia que apenas as pessoas e processos autorizados podem ler, alterar e executar determinados recursos. De seguida, iremos explorar mais detalhadamente como é que as permissões funcionam e como podem ser configuradas.
