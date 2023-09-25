@@ -5,7 +5,7 @@
 3. [Criação e gestão de arquivos](#criação-e-gestão-de-arquivos)
 4. [Manipulação de arquivos (nano, vim/nvim, emacs)](#manipulação-de-arquivos)
 5. [Permissões](#permissões)
-6. Filtros e regex (grep, cat, sort, cut, piping/redirection)
+6. [Filtros e *regular expressions*](#filtros-e-regular-expressions)
 7. Gerenciamento de processos
 8. Remote shell (SSH)
 9. Package manager (apt)
@@ -109,6 +109,8 @@ Existem muitos outros comandos que podem ser consultados através do manual (`ma
 
 `WIP`
 
+---
+
 # Permissões
 
 No ecossistema Linux, a gestão de permissões desempenha um papel fundamental na segurança e no controle de acesso aos arquivos e diretórios. As permissões determinam quem pode ler, escrever e executar cada ficheiro, garantindo assim a integridade do sistema e dos dados.
@@ -152,4 +154,70 @@ Vamos agora focar-nos nas permissões. À primeira vista pode parecer uma sequê
   > A terceira (`x` *execute*) representa a permissão de executar
   >
   >A ausência de cada permissão é representada por `-`
-- Assim, `-rw-rw-r--`
+- Assim, `-rw-rw-r--` é interpretado como:
+  
+  | `-`| `rw-` | `rw-` |`r--` |
+  | ---- | ---- | ---- | ---- |
+  | ficheiro | o utilizador/dono pode ler e escrever | o grupo pode ler e escrever | os restantes apenas podem ler
+> `rwx` significa permissão total e `---` significa sem permissões
+## Como alterar as permissões?
+
+Para alterar as permissões utiliza-se o comando `chmod` e utiliza-se da seguinte forma:
+
+`chmod [permissão] [arquivo]`
+
+Aqui, a parte da permissão é dividida em 3 partes:
+1. Quem?
+2. Revogar ou conceder?
+3. Que permissão?
+
+Vamos agora analisar cada uma das partes.
+- Para a primeira parte utiliza-se o `ugoa` (user/owner, group, others, all).
+- Para decidir entre revogar e conceder a permisão usa-se `-` para revogar e `+` para conceder
+- Para escolher a permissão utiliza-se `r`, `w`, `x`
+
+Exemplos:
+- `chmod g+wx script.sh`
+> Dar permissão de escrita e execução ao grupo
+- `chmod u-w workshop.txt`
+> Revogar a permissão de escrita ao utilizador/dono
+- `chmod a+rwx programaincrivel.py`
+> Conceder todas as permissões a toda a gente
+
+Apesar de esta forma ser bastante intuitiva, também há outra maneira de alterar as permissões utilizando o `chmod`
+
+Reparem que, para cada uma das 9 permissões, podemos atribuir o valor de `1` ou `0`, podendo assim converter o conjunto de caracteres para um número binário de 9 digitos.
+
+Exemplo:
+
+`rwxrw-r--` pode ser convertido em `111110100`
+
+Se representarmos este número em octal ficamos com 3 digitos, sendo que cada um coincide com cada uma das 3 entidades.
+
+`111110100` em octal fica `764`
+
+Para facilitar a conversão podem utilizar esta tabela:
+
+| Binário | Octal |
+| ----- | ----- |
+| 000 | 0 |
+| 001 | 1 |
+| 010 | 2 |
+| 011 | 3 |
+| 100 | 4 |
+| 101 | 5 |
+| 110 | 6 |
+| 111 | 7 |
+
+Desta forma, substituir o conjunto de caracteres por um número de 3 digitos, facilitando a escrita do comando.
+
+Exemplo:
+- `chmod 764 script.sh`
+> Dar permissão total ao utilizador/dono, permissão de escrita e leitura ao grupo e permissão de leitura aos restantes.
+- `chmod 000 workshop.txt`
+> Revogar todas as permissões
+- `chmod 777 programaincrivel.py`
+> Conceder todas as permissões a toda a gente
+ ---
+
+# Filtros e *regular expressions*
