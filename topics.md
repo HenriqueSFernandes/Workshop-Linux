@@ -4,7 +4,7 @@
 2. [Comandos básicos de navegação](#comandos-básicos-de-navegação)
 3. [Criação e gestão de arquivos](#criação-e-gestão-de-arquivos)
 4. [Manipulação de arquivos (nano, vim/nvim, emacs)](#manipulação-de-arquivos)
-5. [Permissões](#permissões) (file permissions, ownership)
+5. [Permissões](#permissões)
 6. Filtros e regex (grep, cat, sort, cut, piping/redirection)
 7. Gerenciamento de processos
 8. Remote shell (SSH)
@@ -116,3 +116,40 @@ No ecossistema Linux, a gestão de permissões desempenha um papel fundamental n
 Ao contrário de sistemas mais orientados para o usuário, o Linux utiliza um sistema de permissões baseado em três entidades principais: proprietário, grupo e outros. Cada arquivo e diretório possui permissões específicas atribuídas a cada uma dessas entidades, que podem ser alteradas para alcançar o nível desejado de segurança e privacidade.
 
 Neste contexto, as permissões são uma parte essencial da administração de sistemas baseados em Linux e da garantia que apenas as pessoas e processos autorizados podem ler, alterar e executar determinados recursos. De seguida, iremos explorar mais detalhadamente como é que as permissões funcionam e como podem ser configuradas.
+
+Para visualizar as permissões de um arquivo ou diretório basta utilizar o seguinte comando: `ls -l [arquivo (opcional)]`.
+
+Exemplo:
+```
+acm@acm: ls -l workshop.txt
+-rw-rw-r-- 1 henrique acm 6618 set 25 13:31 workshop.txt
+```
+
+Vamos agora ver uma desconstrução do *output* :
+
+| Output | Descrição |
+| ----- | ----- |
+| -rw-rw-r-- | permissões |
+| 1 | contagem de *hard links* |
+| henrique | dono |
+| acm | grupo |
+| 6618 | tamanho |
+| set 25 | data |
+| 13:31 | hora |
+| workshop.txt | nome |
+
+Daqui, as partes mais importantes são as permissões, o dono e o grupo.
+
+Vamos agora focar-nos nas permissões. À primeira vista pode parecer uma sequência de 10 caracteres sem sentido, mas na verdade é bastante simples.
+
+- O primeiro caracter diz se é um arquivo (`-`) ou um diretório (`d`)
+- Os próximos 9 podem ser divididos em 3 partes iguais, a primeira para o dono, a segunda para o grupo e a terceira para os restantes utilizadores.
+- Cada uma destas partes é ainda dividida em 3 da seguinte forma:
+  > A primeira (`r` *read*) representa a permissão de leitura
+  >
+  > A segunda (`w` *write*) representa a permissão de escrita
+  >
+  > A terceira (`x` *execute*) representa a permissão de executar
+  >
+  >A ausência de cada permissão é representada por `-`
+- Assim, `-rw-rw-r--`
