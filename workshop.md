@@ -209,7 +209,7 @@ Para facilitar a conversão podem utilizar esta tabela:
 | 110 | 6 |
 | 111 | 7 |
 
-Desta forma, substituir o conjunto de caracteres por um número de 3 digitos, facilitando a escrita do comando.
+Desta forma, pode-se substituir o conjunto de caracteres por um número de 3 digitos, facilitando a escrita do comando.
 
 Exemplo:
 - `chmod 764 script.sh`
@@ -222,7 +222,7 @@ Exemplo:
 
 # Filtros e *regular expressions*
 
-No mundo *Linux*, filtro e *regular expressions* são ferramentas poderosas para processamento e edição de texto, bem como extração de dados.
+No mundo *Linux*, filtros e *regular expressions* são ferramentas poderosas para processamento e edição de texto, bem como extração de dados.
 
 ## Filtros
 
