@@ -221,3 +221,77 @@ Exemplo:
  ---
 
 # Filtros e *regular expressions*
+
+No mundo *Linux*, filtro e *regular expressions* são ferramentas poderosas para processamento e edição de texto, bem como extração de dados.
+
+## Filtros
+
+Filtros são programas que aceitam texto, processam, e transformam noutro texto. Normalmente são utilizados em cadeia *(pipeline)* para realizar uma sequência de operações.
+
+Vamos agora ver alguns exemplos:
+
+- `head [nº de linhas] [arquivo]`
+> É utilizado para mostrar as primeiras n linhas (10 caso não seja especificado) de um arquivo.
+>
+> Exemplo:
+>
+> `head -3 workshop.txt`
+>```
+> Introdução ao linux
+>
+> Comandos básicos de navegação
+>
+>Criação e gestão de arquivos
+> ```
+
+- `tail [nª de linhas] [arquivo]`
+> É o contrário do `head`, pois imprime as últimas n linhas.
+>
+> Exemplo:
+>
+> `tail -3 workshop.txt`
+>```
+> Gerenciamento de processos
+>
+>Remote shell (SSH)
+>
+>Package manager (apt)
+>```
+
+- `sort [opções] [arquivo]`
+> Imprime o conteúdo do arquivo de acordo com as opções especificadas (por defeito ordena alfabeticamente).
+>
+> Exemplo:
+>
+> `sort nomes.txt`
+> ```
+> Ana
+>
+> Bernardo
+>
+> Carlos
+>
+> Guilheme
+>
+> João
+> ```
+
+## Grep e *regular expressions*
+
+
+
+## Pipeline
+
+Em Linux, pipelining é o ato de pegar no output de um comando e enviar para outro, criando assim uma cadeia de processamento. Para esse efeito, utiliza-se o caracter `|`.
+
+Exemplo:
+
+`head -3 nomes.txt | sort -r`
+
+> Carlos
+>
+> Bernardo
+> 
+> Ana
+
+Um dos comandos mais utilizados para pipeline é `grep`, pois é utilizado para pesquisar, utilizando para isso *regular expressions (regex)*
