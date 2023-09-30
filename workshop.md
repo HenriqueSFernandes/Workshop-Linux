@@ -345,22 +345,25 @@ Vamos agora ver alguns exemplos:
 
 ## Grep e *regular expressions*
 
-`WIP`
+### Grep
 
-## Redire
+O comando `grep` é muito usado para pesquisar e filtrar data com base em padrões, como por exemplo pesquisar palavras específicas num documento.
 
-## Pipeline
+Uso:
 
-Em Linux, pipelining é o ato de pegar no output de um comando e enviar para outro, criando assim uma cadeia de processamento. Para esse efeito, utiliza-se o caracter `|`.
+`grep [opções] [padrão] [ficheiro]`
+
+Entre as várias opções temos -i para correspondência sem distinção entre maiúsculas e minúsculas e -r para pesquisa recursiva em diretórios.
+
+O padrão corresponde a uma *regular expression* que iremos ver mais à frente.
+
+Também é possível utilizar o pipelining visto anteriormente como input do comando.
 
 Exemplo:
 
-`head -3 nomes.txt | sort -r`
+`cat log.txt | grep "error"`
 
-> Carlos
->
-> Bernardo
-> 
-> Ana
+> Este comando vai procurar pelo arquivo log.txt a palavra 'error'.
 
-Um dos comandos mais utilizados para pipeline é `grep`, pois é utilizado para pesquisar, utilizando para isso *regular expressions (regex)*
+### *Regular Expressions*
+
