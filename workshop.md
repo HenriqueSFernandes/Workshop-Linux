@@ -5,13 +5,14 @@
 3. [Criação e gestão de arquivos](#criação-e-gestão-de-arquivos)
 4. [Manipulação de arquivos (nano, vim/nvim, emacs)](#manipulação-de-arquivos)
 5. [Permissões](#permissões)
-6. [Filtros e *regular expressions*](#filtros-e-regular-expressions)
-7. Gerenciamento de processos
-8. Remote shell (SSH)
-9. Package manager (apt)
-10. Scripting (??)
-11. Exercícios práticos
-12. Q&A e conclusão (arranjar/fazer cheat sheet)
+6. [Pipeline e Redirecionamento](#pipeline-e-redirecionamento)
+7. [Filtros e *regular expressions*](#filtros-e-regular-expressions)
+8. Gerenciamento de processos
+9. Remote shell (SSH)
+10. Package manager (apt)
+11. Scripting (??)
+12. Exercícios práticos
+13. Q&A e conclusão (arranjar/fazer cheat sheet)
 
 ---
 # Introdução ao linux
@@ -109,6 +110,9 @@ Existem muitos outros comandos que podem ser consultados através do manual (`ma
 
 `WIP`
 
+## Emacs
+
+`WIP`
 ---
 
 # Permissões
@@ -220,6 +224,69 @@ Exemplo:
 > Conceder todas as permissões a toda a gente
  ---
 
+# Pipeline e Redirecionamento
+
+## Pipeline
+
+Em Linux, pipelining é o ato de pegar no output de um comando e enviar para outro, criando assim uma cadeia de processamento. Para esse efeito, utiliza-se o caracter `|`.
+
+Exemplo:
+
+`head -3 nomes.txt | sort -r`
+
+> Carlos
+>
+> Bernardo
+> 
+> Ana
+>
+## Redirecionamento
+
+Normalmente, os comandos enviam o seu output diretamente para o terminal, no entanto às vezes é conveniente guardar o resultado num ficheiro. Para isso, podemos utilizar o caracter `>`.
+
+Exemplo:
+```
+ls > output.txt
+cat output.txt
+```
+> Desktop
+>
+> Downloads
+>
+> Documents
+>
+> Images
+>
+> Videos
+
+Porém, caso o ficheiro de destino já exista, será sobrescrito, e para evitar isso podemos utilizar o caracter `>>`. Este, em vez de sobrescrever, adiciona o output ao ficheiro já existente.
+
+Exemplo:
+```
+ls >> output.txt
+cat output.txt
+```
+> gato
+>
+> cão
+> 
+> Desktop
+>
+> Downloads
+>
+> Documents
+>
+> Images
+>
+> Videos
+
+
+Também é possível fazer o contrário, utilizar um arquivo como input do comando, através do caracter `<`.
+
+Exemplo:
+
+`wc < output.txt`
+
 # Filtros e *regular expressions*
 
 No mundo *Linux*, filtros e *regular expressions* são ferramentas poderosas para processamento e edição de texto, bem como extração de dados.
@@ -278,7 +345,9 @@ Vamos agora ver alguns exemplos:
 
 ## Grep e *regular expressions*
 
+`WIP`
 
+## Redire
 
 ## Pipeline
 
