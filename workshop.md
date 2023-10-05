@@ -1,18 +1,16 @@
 # Índice
 
-1. [Introdução ao linux](#introdução-ao-linux)
+1. [Introdução ao linux](#introdução-ao-linux) *
 2. [Comandos básicos de navegação](#comandos-básicos-de-navegação)
-3. [Criação e gestão de arquivos](#criação-e-gestão-de-arquivos)
+3. [Criação e gestão de arquivos](#criação-e-gestão-de-arquivos) *
 4. [Manipulação de arquivos (nano, vim/nvim, emacs)](#manipulação-de-arquivos)
-5. [Permissões](#permissões)
+5. [Permissões](#permissões) * 
 6. [Pipeline e Redirecionamento](#pipeline-e-redirecionamento)
-7. [Filtros e *regular expressions*](#filtros-e-regular-expressions)
-8. Gerenciamento de processos
+7. [Filtros e *regular expressions*](#filtros-e-regular-expressions) * 
+8. Gerenciamento de processos *
 9. Remote shell (SSH)
 10. Package manager (apt)
-11. Scripting (??)
-12. Exercícios práticos
-13. Q&A e conclusão (arranjar/fazer cheat sheet)
+11. Q&A e conclusão (arranjar/fazer cheat sheet)
 
 ---
 # Introdução ao linux
