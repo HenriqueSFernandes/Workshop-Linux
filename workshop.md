@@ -365,3 +365,40 @@ Exemplo:
 
 ### *Regular Expressions*
 
+As expressões regulares, frequentemente abreviadas como "regex" ou "regexp," são padrões poderosos e flexíveis usados para corresponder e manipular texto. São uma sequência de caracteres que definem um padrão de pesquisa. As expressões regulares são usadas em várias linguagens de programação, editores de texto e ferramentas para tarefas como pesquisa, validação e extração de informações de texto.
+
+Estes são os componentes de uma *regex*:
+
+- `.` - um caracter
+- `?` - o caracter anterior existe 0 ou 1 vezes
+- `*` - o caracter anterior existe 0 ou mais vezes
+- `+` - o caracter anterior existe 1 ou mais vezes
+- `{n}` - o caracter anterior existe exatamente n vezes
+- `{n,m}` - o caracter anterior existe pelo menos n vezes e no máximo m vezes
+- `[bhp]` - o caracter é um destes (neste caso ou é b ou h ou p)
+- `[^bhp]` - o caracter __não__ é um destes (neste caso não é b nem h nem p)
+- `[g-k]` - o caracter está entre g e k (neste caso pode ser g,h,i,j,k)
+- `()` - agrupa o conjunto de caracteres num só
+- `|` - operador de disjunção (__ou__)
+- `^` - procura no início da linha
+- `$` - procura no fim da linha
+
+Para utilizar regular expressions com o grep é necessário utilizar a opção *__-E__*
+
+Vamos agora ver exemplos:
+
+- `grep -E '[aeiou]{3,}' texto.txt`
+
+> Retorna as linhas do arquivo que possuem uma sequência de 3 ou mais vogais
+
+- `grep -E '(s.)$' texto.txt`
+  
+> Retorna as linhas do arquivo que acabam em 's.'
+
+- `grep -E '^(A|O)' texto.txt`
+
+> Retorna as linhas que começam com A ou O
+
+- `grep -E '.*@.*(.com)' text.txt`
+
+> Retorna as linhas que contêm endereços de email
