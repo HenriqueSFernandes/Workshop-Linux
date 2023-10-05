@@ -3,10 +3,10 @@
 1. [Introdução ao linux](#introdução-ao-linux) *
 2. [Comandos básicos de navegação](#comandos-básicos-de-navegação)
 3. [Criação e gestão de arquivos](#criação-e-gestão-de-arquivos) *
-4. [Manipulação de arquivos (nano, vim/nvim, emacs)](#manipulação-de-arquivos)
-5. [Permissões](#permissões) * 
+4. [Manipulação de arquivos](#manipulação-de-arquivos)
+5. [Permissões](#permissões) *
 6. [Pipeline e Redirecionamento](#pipeline-e-redirecionamento)
-7. [Filtros e *regular expressions*](#filtros-e-regular-expressions) * 
+7. [Filtros e *regular expressions*](#filtros-e-regular-expressions) *
 8. [Gestão de processos](#gestão-de-processos) *
 9. [Secure shell](#secure-shell-ssh)
 10. [Package Manager](#package-manager)
