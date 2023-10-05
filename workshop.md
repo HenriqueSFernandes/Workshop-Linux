@@ -7,10 +7,9 @@
 5. [Permissões](#permissões) * 
 6. [Pipeline e Redirecionamento](#pipeline-e-redirecionamento)
 7. [Filtros e *regular expressions*](#filtros-e-regular-expressions) * 
-8. Gerenciamento de processos *
-9. Remote shell (SSH)
-10. Package manager (apt)
-11. Q&A e conclusão (arranjar/fazer cheat sheet)
+8. [Gestão de processos](#gestão-de-processos) *
+9. [Secure shell](#secure-shell-ssh)
+10. [Package Manager](#package-manager)
 
 ---
 # Introdução ao linux
@@ -104,13 +103,6 @@ Após terem o *nano* aberto há alguns conceitos muito importantes que facilitam
 
 Existem muitos outros comandos que podem ser consultados através do manual (`man nano`)
 
-## Vim
-
-`WIP`
-
-## Emacs
-
-`WIP`
 ---
 
 # Permissões
@@ -402,3 +394,75 @@ Vamos agora ver exemplos:
 - `grep -E '.*@.*(.com)' text.txt`
 
 > Retorna as linhas que contêm endereços de email
+---
+
+# Gestão de Processos
+
+## Listar processos
+
+A gestão de processos em sistemas Linux é uma parte essencial da administração de sistemas operativos. Envolve a supervisão, controlo e monitorização de programas em execução, conhecidos como "processos". Estes processos podem ser aplicações, scripts ou até mesmo tarefas do sistema em segundo plano.
+
+Para ver uma lista de todos os processos em tempo real, bem como o uso da RAM e do CPU utiliza-se o comando `top`. Outro comando bastante utilizado é o `ps aux`.
+
+- `ps aux | grep nautilus`
+  
+> neacm 6245 14.1 1.5 3021052 215328 ?      Sl    15:42   0:00  /usr/bin/nautilus --gapplication-service
+>
+> este output pode ser bastante confuso, por isso normalmente usa-se apenas `ps -A | grep nautilus` que dá o seguinte output:
+>
+> 6245 ?     00:00:10 nautilus
+
+## Terminar processos
+
+Pode não acontecer muito frequentemente, mas às vezes os programas congelam e não conseguem terminar sozinhos. Nestes casos é útil saber terminar processos. Vamos ver um caso prático em que o firefox congela.
+
+O primeiro passo é saber o id do processo (PID), e para isso já vimos que podemos utilizar o seguinte comando:
+
+`ps -A | grep firefox`
+
+> 5585 ?      00:00:12 firefox
+
+Agora utilizamos o comando `kill` para terminar o processo:
+
+`kill 5585`
+
+No entanto, às vezes apenas utilizar `kill [PID]` não é suficiente, pois este apenas "pede" ao processo para terminar. Nestes casos utiliza-se `kill -9 [PID]` pois assim obrigamos o processo a terminar.
+
+---
+
+# Secure Shell (SSH)
+
+O SSH, ou Secure Shell, é um protocolo de rede amplamente utilizado para estabelecer conexões seguras e autenticadas entre computadores de uma rede, geralmente pela internet. Fornece uma maneira segura de aceder e controlar sistemas remotos e é uma ferramenta fundamental para administradores de sistemas, desenvolvedores e qualquer pessoa que precise de acesso remoto a servidores ou dispositivos.
+
+Para utilizar SSH é bastante simples, basta utilizar o comando `ssh username@remote_host`. De seguida, terão de aceitar a *fingerprint* e escrever a password da máquina a que estão a tentar aceder (esta não é a maneira mais segura de fazer, devem utilizar um par de chaves para fazer o acesso, porém não vamos cobrir esse tópico aqui).
+
+Além de permitir controlar um servidor remotamente, o SSH também possui muitas outras funcionalidades, como por exemplo abrir túneis para encaminhar o tráfego de internet, no entanto não iremos falar disso.
+
+---
+
+# Package Manager
+
+Os *package managers* são ferramentas fundamentais em sistemas Linux. Desempenham um papel crucial na instalação, atualização, remoção e gestão de software.A principal função de um *package manager* é simplificar o processo de instalação e manutenção de programas, garantindo que as dependências sejam atendidas e que o software seja mantido atualizado. Normalmente, diferentes distribuições de Linux utilizam diferentes *package managers*, e estes são alguns exemplos:
+> `apt` em Debian
+>
+> `yum/dnf` em Fedora
+>
+>`pacman` em Arch
+
+Vamos agora falar um pouco acerca do `apt` pois é o que está presente no Ubuntu.
+
+- `sudo apt install [pacote]`
+
+> Instala o pacote e todas as suas dependências
+>
+- `sudo apt update`
+  
+> Atualiza a lista de pacotes
+
+- `sudo apt upgrade`
+
+> Atualiza os pacotes (utilizado após *apt update*)
+
+- `sudo apt remove [pacote]`
+
+> Desinstala o pacote
